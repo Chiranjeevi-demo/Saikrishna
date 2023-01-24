@@ -1,0 +1,29 @@
+*{
+  text-align: left;
+}
+
+.box{
+  height: 100px;
+  width:270px;
+  
+  
+}
+.box-2{
+  background-color:rgb(231, 243, 241);
+}
+/* .static{
+  position: static;
+  
+} */
+.button{
+  background-color: #fff;
+  border: 2px solid rgb(182, 182, 235);
+  width: 200px;
+  height: 30px;
+   
+}
+.abc{
+  padding: 20px;
+  height: 20px;
+  width:250px
+  }

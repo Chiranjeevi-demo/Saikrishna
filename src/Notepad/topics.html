@@ -1,0 +1,182 @@
+<html>
+		<head> <head>
+		<body>
+		
+		<ul> 
+			<li> 1. data types </li> 
+			<li> 2. variable</li> 
+			<li> 3 messages (alert, confirm, prompt)</li>
+			<li> 4. operators </li> 
+			<li> 5. loops  </li> 
+			<li> 6. functions</li> 
+			<li> 7, if, else if, else</li>
+			<li> 8, switch </li>
+			<li> 9, strict mode </li> 			
+			<li> 10, comparision</li> 			
+			<li> 11, Typeof</li> 
+			<li> 12, call back</li>
+			<li> 8. Arrays</li>
+			<li> 13 spread, rest</li>
+			<li> 22 Curry Functions</li> 
+			
+			
+			
+			
+			<li> 7. objects </li> 
+			
+			
+			<li> 9 closers </li> 
+			<li> 10.Promises</li>
+			<li> 11 template litarals </li>  			
+			<li> 12 destructing</li> 
+			<li> 14 Arrow Functions</li> 		
+			<li> 16 Hoisting </li> 			
+			<li> 17 comparision</li> 					
+			<li> 19 Async/await</li>
+			 			
+			<li> 21 call Apply bind </li>  			 			
+			<li> 23 iife</li> 
+			<li> 24 LocalStorage, sessionStorage</li> 
+			<li> 25 deepcopy/shallow Copy</li> 
+			
+			<li> 26, let const</li>
+			<li> 27, events</li>
+			<li> 30, debounce and Throttling</li>
+			<li> 31, EventLoop</li>
+			<li> 32, Event capturing and Event bubbling</li>
+			<li> 33. set Timeout Set Interval</li> 
+						
+		</ul>
+		
+		
+		
+		<li> 8. Arrays </li> 
+		<h1>
+        1. Push
+        2. pop
+        3. shift
+        4. unshift
+        5. splice
+        6. slice
+        7. concat
+        8. join
+        9. split
+        10. reverse
+        
+        <br>
+        iterating Mehtods : <br> 
+        1. forEach 
+        2. map
+        3. filter
+        4. Every
+        5. some
+        6. find
+        7. findIndex
+        8. indexOf
+        9. reduce
+       
+    </h1>
+		
+		//** even odd 
+		
+		<script>
+		
+		// var arr = [1,2,3,5,6,1]
+
+// var abc = arr.indexOf(1)
+
+//var fd = arr.findIndex(x => x == 3)
+
+//var a = arr.every(x=> x >= 1 )
+
+//var a = arr.some(x=> x >= 7 )
+
+//console.log(abc)
+
+
+
+
+// var arr1 = [6,7,8,9]
+
+// //var arr1 = arr.slice(0,3)
+
+// //arr.splice(3,0,4)
+
+// var arr2 = arr.concat(arr1)
+// console.log(arr2)
+
+
+// var str = "veera"
+
+// var str1 = str.split("").join('*')
+
+
+
+//console.log(str1)
+==============
+
+
+function task() {
+    console.log('setTimeout Demo!')
+}
+
+//setTimeout(task, 3000);
+
+setInterval(task, 3000);
+
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  
+  console.log(key);
+  console.log(user[key])
+ 
+  //alert( user[key] ); // John, 30, true
+}
+
+var students1 =[
+    {name:"veera", telugu:40,hindi:50,english:38,maths:48},
+    {name:"Ravi", telugu:35,hindi:60,english:60,maths:40},
+    {name:"Raju", telugu:80,hindi:50,english:90,maths:70},
+    {name:"Ramu", telugu:80,hindi:60,english:78,maths:96}
+]
+
+var student2 =[]
+
+students1.forEach((val,ind,arr) => {
+
+    var total1 = val.telugu + val.hindi + val.english + val.maths
+      val.total = total1;
+
+    //   var percent = total1/400 *100;
+    //   val.percentage = percent
+
+        if(val.total >= 310 ){
+            val.grade = "a";
+            student2.push(val)
+        }
+        else if(val.total >= 270 && val.total <310 ){
+            val.grade = "b";
+            student2.push(val)
+        }
+        else{
+            val.grade = "c";
+            student2.push(val)
+        }
+
+    console.log(val)
+
+})
+
+console.log(student2)
+
+
+		
+		</script>
+		
+		</body>
+</html>

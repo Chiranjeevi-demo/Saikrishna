@@ -1,0 +1,215 @@
+<html>
+<body>
+
+<p> EventLoop?
+JavaScript is single threaded. so it needs event loop to run asynchronous (Multi Thread) code.
+* JavaScript first runs synchronous code, then it queue asynchronous code to call later.
+* Asynchronous code is called/executed by event loop.
+* System/Browser takes synchronous code and put them as tasks. then these tasks are put them into queue.
+* The Event Loop has one simple job — to monitor the is there any task to handle.
+* System/Browser push the task to call stack.
+* Then the event loop will check the call stack and execute the task.
+* Then it waits for the next task to be pushed to the call stack
+
+function task(message) {
+    let n = 10000000000;
+    while (n > 0){
+        n--;
+    }
+    console.log(message);
+}
+console.log('Start script...');
+task('Download a file.');
+console.log('Done!');
+</p>
+
+<p>
+2 Higher-Order function?
+Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
+const firstOrderFunc = () =>
+  console.log("Hello, I am a First order function");
+const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
+higherOrder(firstOrderFunc);
+</p>
+
+<p> 
+3. async await
+
+
+Async await boath are the keywords which are used to make promices easier to write
+Async and await keywords are used to perform asynchronous operations in javascript.
+Async- makes a function return a promise,
+Async function always returns a  promises value.
+const data = async ()=>
+{
+   var data = "This is Async"
+return data;
+}
+data().then(x=> console.log(x))
+
+try{
+
+Await- makes a function wait for a promise,
+It could be used  within the async block only, 
+It makes the code wait until the promise return a result,
+It only makes the async block wait
+async function myfunction() {
+  let myPromise = new Promise(function(resolve) {
+    setTimeout(function() {resolve("Success");}, 3000);
+  });
+  let results = await myPromise;
+  alert(results)
+}
+
+</p>
+
+
+<p> 
+1.	Call invokes the function immediately and allows you to pass in arguments one by one
+2.	Apply invokes the function immediately and allows you to pass in arguments as an array.
+3.	Bind returns a new function, and you can invoke/call it anytime you want by invoking a function.
+
+
+Call:
+var name1 = {firstName: 'vee', lastName: 'ra'};
+var name2 = {firstName: 'pasu', lastName: 'pula'};
+function say(greeting) {
+    console.log(greeting + ' ' + this.firstName + '' + this.lastName);
+}
+say.call(name1, 'Hello'); 
+say.call(name2, 'Hello');
+apply:
+var person1 = {firstName: 'Jon', lastName: 'Kuperman'};
+var person2 = {firstName: 'Kelly', lastName: 'King'};
+function say(greeting) {
+    console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
+}
+say.apply(person1, ['Hello']); 
+say.apply(person2, ['Hello']);
+
+bind:
+var person1 = {firstName: 'Jon', lastName: 'Kuperman'};
+var person2 = {firstName: 'Kelly', lastName: 'King'};
+
+function say() {
+    console.log('Hello ' + this.firstName + ' ' + this.lastName);
+}
+
+var sayHelloJon = say.bind(person1);
+var sayHelloKelly = say.bind(person2);
+
+sayHelloJon();
+sayHelloKelly(); 
+
+</p>
+
+
+<p> 
+Closers:
+Closers are created whenever a variable that is defined outside the current scope is accessed from with is some inner scope
+
+
+
+function makeCounter () {
+  var count = 0;
+  return function () {
+    count += 1;
+    return count;
+  }
+}
+
+var x = makeCounter();
+console.log(x()); 
+console.log(x())
+
+</p>
+
+
+<p> 
+promises:
+A Promises represents the completion of an asynchronous operation with its results it can be either successful completion of the promise, or its failure, but eventually completed. Promise uses a then() which is executed only after the completion of the promise resolve.
+
+let payment = new Promise(function(resolve, reject)
+{
+    let send = false
+    if(send)
+    {
+        resolve("payment is done");
+    }
+    else
+    {
+        reject("payment is cancel");
+    }
+});
+payment.then(( d )  => { console.log(d)} )
+       .catch(( d ) => { console.log(d)} )
+</p>
+<p> 
+debounce and Throttling : jsbinjsjsbisureshd4444762@gmail.cosureshd4444762@gmail.cosureshd4444762@gmail.cosureshd4444762@gmail.co
+=========================
+Debouncing and throttling techniques are used to limit the number of times a function can execute.		
+debounce :  function will be executed only after the specified time once the user stops firing the event.
+==========
+In the debouncing technique, no matter how many times the user fires the event, 
+the attached function will be executed only after the specified time once the user stops firing the event.
+
+ex : searching in the internet.
+
+Throttling :  executes the function at specified intervals.
+============
+Throttling is a technique in which, no matter how many times the user fires the event, 
+the attached function will be executed only once in a given time interval.
+
+ex : Making Api call is best .
+
+1. The main difference between throttling and debouncing is that 
+throttling executes the function at a regular interval, 
+while debouncing executes the function only after some cooling period.
+
+2. Both can be implemented with the help of the setTimeOut web Api.
+
+Event capturing and Event bubbling
+ And Event capturing is the event starts from top element to the target element. It is the opposite of Event bubbling, which starts from target element to the top element.
+
+</p>
+
+What is event delegation in JavaScript?
+Image result for event delegation in javascript
+Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the . target property of the event object
+
+
+<p> What is prototype
+prototype is a property of a Function object. It is the prototype of objects constructed by that function. __proto__ is an internal property of an object, pointing to its prototype.
+
+
+Controlled Component
+Element data can be  controlled by parent component through callbacks like onChange();
+
+Uncontrolled Component 
+Elements data can be controlled by dom  itself
+
+Grid and flexbox. The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed for layout in one dimension - either a row or a column. Grid was designed for two-dimensional layout - rows, and columns at the same time
+ </p>
+<p> 
+Higher Order Component 
+
+import React, {Component} from 'react';
+ export default function Hoc(HocComponent){
+ return class extends Component{ 
+render(){
+ return ( 
+<div> <HocComponent></HocComponent> </div> 
+); 
+}
+ }
+ }
+</p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+
+
+
+</body>
+</html>

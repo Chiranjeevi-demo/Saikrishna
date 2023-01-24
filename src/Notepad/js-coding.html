@@ -1,0 +1,16 @@
+<script>
+
+ var arr = [{name:"veera", age: 30},
+			{name:"ravi", age:28},
+			{name:"siva", age:25}
+			]
+			
+	var arr1 = arr.map((e)=>{
+	let key = Object.keys(e)[0]
+	return {[key]:e[key]}
+	})
+	
+	console.log(arr1)
+
+
+</script>
